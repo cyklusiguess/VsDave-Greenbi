@@ -1746,6 +1746,19 @@ class PlayState extends MusicBeatState
 
 		super.update(elapsed);
 
+	for (note in notes) {
+		if (!note.finishedGenerating)
+			continue;
+
+	if (note.strumTime - Conductor.songPosition > 3000)
+		continue;
+
+
+	if (note.y > -100 && note.y < FlxG.height + 100) {
+		note.update(elapsed);
+	}
+}
+
 		if (FlxG.save.data.accuracyDisplay)
 		{
 			scoreTxt.text = "Score:" + songScore + " | Misses:" + misses + " | Accuracy:" + truncateFloat(accuracy, 2) + "% ";
@@ -1988,15 +2001,16 @@ class PlayState extends MusicBeatState
 		}
 
 
-	unspawnNotes.sort((a, b) -> Reflect.compare(a.strumTime, b.strumTime));
+unspawnNotes.sort((a, b) -> Reflect.compare(a.strumTime, b.strumTime));
 
-	var spawnTime = (SONG.song.toLowerCase() == 'unfairness') ? 15000 : 1500;
+var spawnTime = (SONG.song.toLowerCase() == 'unfairness') ? 15000 : 1500;
 
-	while (unspawnNotes.length > 0 && unspawnNotes[0].strumTime - Conductor.songPosition < spawnTime) {
+while (unspawnNotes.length > 0 && unspawnNotes[0].strumTime - Conductor.songPosition < spawnTime) {
 	var note:Note = unspawnNotes.shift();
 	note.finishedGenerating = true;
 	notes.add(note);
 }
+
 
 
 		if (generatedMusic)
