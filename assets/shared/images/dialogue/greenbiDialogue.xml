@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="greenbiDialogue.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="greenbi0000" x="0" y="0" width="398" height="309" frameX="2" frameY="2" frameWidth="394" frameHeight="305"/>
+</TextureAtlas>

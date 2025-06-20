@@ -153,7 +153,7 @@ class DialogueBox extends FlxSpriteGroup
 				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic(Paths.image('weeb/spiritFaceForward', 'week6'));
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
-			case 'house' | 'insanity' | 'furiosity' | 'polygonized' | 'supernovae' | 'cheating' | 'unfairness' | 'glitch' | 'blocked' | 'corn-theft' | 'maze' | 'splitathon' | 'old-house' | 'old-insanity' | 'old-blocked' | 'old-corn-theft' | 'old-maze' | 'beta-maze' | 'old-splitathon':
+			case 'house' | 'insanity' | 'furiosity' | 'polygonized' | 'supernovae' | 'cheating' | 'unfairness' | 'glitch' | 'blocked' | 'corn-theft' | 'maze' | 'splitathon' | 'old-house' | 'old-insanity' | 'old-blocked' | 'old-corn-theft' | 'old-maze' | 'beta-maze' | 'old-splitathon' | 'tynmmmm':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('speech_bubble_talking');
 				box.setGraphicSize(Std.int(box.width / textBoxSizeFix));
@@ -184,6 +184,8 @@ class DialogueBox extends FlxSpriteGroup
 				
 			case 'blocked' | 'corn-theft' | 'maze' | 'supernovae' | 'glitch' | 'splitathon' | 'cheating' | 'unfairness' | 'old-blocked' | 'old-maze' | 'old-corn-theft' | 'beta-maze' | 'old-splitathon':
 				portraitLeftCharacter = 'bambi';
+			case 'tynmmmm'
+				portraitLeftCharacter = 'greenbi'
 		}
 
 		var leftPortrait:Portrait = getPortrait(portraitLeftCharacter);
@@ -568,6 +570,9 @@ class DialogueBox extends FlxSpriteGroup
 			case 'tristan':
 				portrait.portraitPath = 'dialogue/tristanPortrait';
 				portrait.portraitPrefix = 'tristan portrait';
+			case 'greenbi'
+				portrait.portraitPath = 'dialogue/greenbiDialogue'
+				portrait.portraitPrefix = 'greenbi'
 		}
 		return portrait;
 	}
