@@ -2150,7 +2150,7 @@ while (unspawnNotes.length > 0 && unspawnNotes[0].strumTime - Conductor.songPosi
 					{
 						if(daNote.mustPress && daNote.finishedGenerating)
 							noteMiss(daNote.noteData);
-							health -= 0.075;
+							health -= 0.002;
 							trace("miss note");
 							vocals.volume = 0;
 					}
@@ -2935,7 +2935,7 @@ while (unspawnNotes.length > 0 && unspawnNotes[0].strumTime - Conductor.songPosi
 	{
 		if (!boyfriend.stunned)
 		{
-			health -= 0.04;
+			health -= 0.002;
 			trace("note miss");
 			if (combo > 5 && gf.animOffsets.exists('sad'))
 			{
