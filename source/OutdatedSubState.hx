@@ -31,7 +31,7 @@ class OutdatedSubState extends MusicBeatState
 				"Hello! \nThis mod utilizes GREENBI that may be of GREN BI GREENBI  to GREEMBI. \nIf you wish to disable these, \npress N, otherwise press Y. You can change this in options. \n Also, Supernovae and Glitch are not meant to be taken seriously and are not composed by me. \n Supernovae is by Arch Linux.",
 				32);
 		}
-		txt.setFormat("Comic Sans MS Bold", 32, FlxColor.GREEN, CENTER);
+		txt.setFormat("Comic Sans MS Bold", 32, FlxColor.LIME, CENTER);
 		txt.screenCenter();
 		txt.antialiasing = true;
 		add(txt);
