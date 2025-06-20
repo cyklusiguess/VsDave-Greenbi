@@ -21,7 +21,7 @@ class OutdatedSubState extends MusicBeatState
 		var txt:FlxText = null;
 		if (FlxG.save.data.begin_thing)
 		{
-			txt = new FlxText(0, 0, FlxG.width,h
+			txt = new FlxText(0, 0, FlxG.width,
 				"Hello! \nThis mod utilizes GREENBI that may be of RGERNENRERIERNERINRENI to GRENEIERIB . \nIf you wish to disable these, \nturn off tgdfsdfgf option in the options menu. \n Also, Supedfghrsthrtrnovae and Glhrhgdfhtgfgfhgdch are not meant thgfhfhfghfgeriously and are not compohdfgd by me. \n Supernovae ihfgh and Glitch is by The Boneyard. \nPredfhgdnter to continue.",
 				32);
 		}
