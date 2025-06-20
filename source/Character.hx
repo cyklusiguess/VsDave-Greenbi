@@ -790,7 +790,7 @@ class Character extends FlxSprite
 				nativelyPlayable = true;
 
 				flipX = true;
-		}
+
 
 		case 'greenbi':
 				frames = Paths.getSparrowAtlas('greenbi/Greenbi_Sprite');
@@ -808,6 +808,7 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 		dance();
+}
 
 		if(isPlayer)
 		{
