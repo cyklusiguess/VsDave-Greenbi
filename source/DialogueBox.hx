@@ -571,8 +571,8 @@ class DialogueBox extends FlxSpriteGroup
 				portrait.portraitPath = 'dialogue/tristanPortrait';
 				portrait.portraitPrefix = 'tristan portrait';
 			case 'greenbi':
-				portrait.portraitPath = 'dialogue/greenbiDialogue'
-				portrait.portraitPrefix = 'greenbi'
+				portrait.portraitPath = 'dialogue/greenbiDialogue';
+				portrait.portraitPrefix = 'greenbi';
 		}
 		return portrait;
 	}
