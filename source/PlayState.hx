@@ -1986,18 +1986,17 @@ class PlayState extends MusicBeatState
 
 			// FlxG.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 		}
-		if (unspawnNotes.length > 0) {
-			var thresholdTime = Conductor.songPosition + 600;
-			var i = unspawnNotes.length - 1; // start from the end
-		
-			while (i >= 0) {
-				if (unspawnNotes[i].strumTime < thresholdTime) {
-					notes.add(unspawnNotes[i]);
-					unspawnNotes.splice(i, 1);
-				}
-				i--;
-			}
-		}
+
+
+	unspawnNotes.sort((a, b) -> Reflect.compare(a.strumTime, b.strumTime));
+
+	var spawnTime = (SONG.song.toLowerCase() == 'unfairness') ? 15000 : 1500;
+
+	var note:Note = unspawnNotes.shift();
+	note.finishedGenerating = true;
+	notes.add(note);
+}
+
 
 		if (generatedMusic)
 		{
