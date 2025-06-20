@@ -340,6 +340,8 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('splitathon/splitathonDialogue'));
 			case 'vs-dave-thanksgiving':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('vs-dave-thanksgiving/lmaoDialogue'));
+			case 'tynmmmm':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('tynmmmm/greenbiDialogue'));	
 		}
 
 		var stageCheck:String = 'stage';
@@ -626,7 +628,7 @@ class PlayState extends MusicBeatState
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
 			'health', 0, 2);
 		healthBar.scrollFactor.set();
-		healthBar.createFilledBar(0xFF00FF3C, 0xFF006EFF);
+		healthBar.createFilledBar(0xFF00FF3C, 0x31B0D1);
 		add(healthBar);
 
 		var credits:String;
@@ -650,7 +652,7 @@ class PlayState extends MusicBeatState
 				credits = '';
 		}
 		var randomThingy:Int = FlxG.random.int(0, 2);
-		var engineName:String = 'stupid';
+		var engineName:String = 'GREENBI ';
 		switch(randomThingy)
 	    {
 			case 0:
