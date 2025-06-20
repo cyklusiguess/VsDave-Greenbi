@@ -396,6 +396,7 @@ class StoryMenuState extends MusicBeatState
 						LoadingState.loadAndSwitchState(new PlayState(), true);
 					case 1:
 						FlxG.sound.music.stop();
+						LoadingState.loadAndSwitchState(new PlayState(), true);
 				}
 				
 			});
