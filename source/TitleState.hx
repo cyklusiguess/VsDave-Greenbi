@@ -263,7 +263,7 @@ class TitleState extends MusicBeatState
 
 			titleText.animation.play('press');
 
-			FlxG.camera.flash(FlxColor.WHITE, 1);
+			FlxG.camera.flash(FlxColor.LIME, 1);
 			FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
 
 			transitioning = true;
@@ -291,7 +291,7 @@ class TitleState extends MusicBeatState
 		for (i in 0...textArray.length)
 		{
 			var money:FlxText = new FlxText(0, 0, FlxG.width, textArray[i], 48);
-			money.setFormat("Comic Sans MS Bold", 48, FlxColor.WHITE, CENTER);
+			money.setFormat("Comic Sans MS Bold", 48, FlxColor.LIME, CENTER);
 			money.screenCenter(X);
 			money.y += (i * 60) + 200;
 			credGroup.add(money);
@@ -302,7 +302,7 @@ class TitleState extends MusicBeatState
 	function addMoreText(text:String)
 	{
 		var coolText:FlxText = new FlxText(0, 0, FlxG.width, text, 48);
-		coolText.setFormat("Comic Sans MS Bold", 48, FlxColor.WHITE, CENTER);
+		coolText.setFormat("Comic Sans MS Bold", 48, FlxColor.LIME, CENTER);
 		coolText.screenCenter(X);
 		coolText.y += (textGroup.length * 60) + 200;
 		credGroup.add(coolText);
@@ -343,17 +343,17 @@ class TitleState extends MusicBeatState
 			case 1:
 			createCoolText(['Created by people like:']);
 			case 2:
-				addMoreText('MoldyGH\nMissingTextureMan101\nRapparep LOL');
+				addMoreText('greenbi');
 			case 3:
-				addMoreText('TheBuilderXD\nCyndaquilDAC\nErizur');
+				addMoreText('greenbi');
 			case 4:
 				addMoreText('and our wonderful contributors!');
 			case 5:
 				deleteCoolText();
 			case 6:
-				createCoolText(['Supernovae by ArchWk']);
+				createCoolText(['']);
 			case 7:
-				addMoreText('Glitch by The Boneyard');
+				addMoreText('');
 			case 8:
 				deleteCoolText();
 				ngSpr.visible = false;
@@ -366,7 +366,7 @@ class TitleState extends MusicBeatState
 			case 12:
 				addMoreText("Friday Night Funkin'");
 			case 13:
-				addMoreText('VS. Dave and Bambi');
+				addMoreText('VS. greenbim');
 			case 14:
 				addMoreText('Mod');
 			case 15:
@@ -384,7 +384,7 @@ class TitleState extends MusicBeatState
 		{
 			remove(ngSpr);
 
-			FlxG.camera.flash(FlxColor.WHITE, 4);
+			FlxG.camera.flash(FlxColor.LIME, 4);
 			remove(credGroup);
 			skippedIntro = true;
 		}
