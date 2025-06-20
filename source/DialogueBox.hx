@@ -65,7 +65,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'thorns':
 				FlxG.sound.playMusic(Paths.music('LunchboxScary'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
-			case 'house' | 'insanity' | 'splitathon' | 'old-house' | 'old-insanity' | 'old-splitathon':
+			case 'house' | 'insanity' | 'splitathon' | 'old-house' | 'old-insanity' | 'old-splitathon' | 'tynmmmm':
 				FlxG.sound.playMusic(Paths.music('DaveDialogue'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
 			case 'furiosity' | 'polygonized' | 'cheating' | 'unfairness':
