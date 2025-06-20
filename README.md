@@ -14,4 +14,4 @@ greenbi isnt just your ordinary dave ande bambi mod... greenbi is **GREEN** and 
 
 ## Serious stuff here 
 Based on the Dave and Bambi 2.5c codebase to keep the aesthetic of this masterpiece.
-ALl work here is made by Tymek Kaszubowski Fortnite
+All work here is made by Tymek Kaszubowski Fortnite
