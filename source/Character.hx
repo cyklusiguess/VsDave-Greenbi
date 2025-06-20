@@ -791,6 +791,22 @@ class Character extends FlxSprite
 
 				flipX = true;
 		}
+
+		case 'greenbi':
+				frames = Paths.getSparrowAtlas('greenbi/Greenbi_Sprite');
+				animation.addByPrefix('idle', 'Idle', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 36, -5);
+				addOffset("singRIGHT", -45, -11);
+				addOffset("singLEFT", -10, -9);
+				addOffset("singDOWN", -12, -48);
+
+				playAnim('idle');
 		dance();
 
 		if(isPlayer)
