@@ -27,7 +27,7 @@ class MainMenuState extends MusicBeatState
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
-	var optionShit:Array<String> = ['story mode', 'freeplay', 'extras', 'options'];
+	var optionShit:Array<String> = ['story mode', 'extras', 'options'];
 
 	var newGaming:FlxText;
 	var newGaming2:FlxText;
@@ -37,12 +37,12 @@ class MainMenuState extends MusicBeatState
 
 	public static var finishedFunnyMove:Bool = false;
 
-	public static var daRealEngineVer:String = 'Dave';
+	public static var daRealEngineVer:String = 'Greenbi';
 
-	public static var engineVers:Array<String> = ['Dave', 'Bambi', 'Tristan'];
+	public static var engineVers:Array<String> = ['Greenbi'];
 
-	public static var kadeEngineVer:String = "DAVE";
-	public static var gameVer:String = "0.2.7.1";
+	public static var kadeEngineVer:String = "Greenbi";
+	public static var gameVer:String = "Greenbi";
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
@@ -88,7 +88,7 @@ class MainMenuState extends MusicBeatState
 		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = true;
-		bg.color = 0xFFFDE871;
+		bg.color = 0xff00ff08;
 		add(bg);
 
 		magenta = new FlxSprite(-80).loadGraphic(bg.graphic);
@@ -98,7 +98,7 @@ class MainMenuState extends MusicBeatState
 		magenta.screenCenter();
 		magenta.visible = false;
 		magenta.antialiasing = true;
-		magenta.color = 0xFFfd719b;
+		magenta.color = 0xff00a005;
 		add(magenta);
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
@@ -138,7 +138,7 @@ class MainMenuState extends MusicBeatState
 
 		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, gameVer + " FNF - " + daRealEngineVer + " Engine", 12);
 		versionShit.scrollFactor.set();
-		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.LIME, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
 
 		// NG.core.calls.event.logEvent('swag').send();
