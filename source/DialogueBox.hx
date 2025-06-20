@@ -184,8 +184,8 @@ class DialogueBox extends FlxSpriteGroup
 				
 			case 'blocked' | 'corn-theft' | 'maze' | 'supernovae' | 'glitch' | 'splitathon' | 'cheating' | 'unfairness' | 'old-blocked' | 'old-maze' | 'old-corn-theft' | 'beta-maze' | 'old-splitathon':
 				portraitLeftCharacter = 'bambi';
-			case 'tynmmmm'
-				portraitLeftCharacter = 'greenbi'
+			case 'tynmmmm':
+				portraitLeftCharacter = 'greenbi';
 		}
 
 		var leftPortrait:Portrait = getPortrait(portraitLeftCharacter);
@@ -570,7 +570,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'tristan':
 				portrait.portraitPath = 'dialogue/tristanPortrait';
 				portrait.portraitPrefix = 'tristan portrait';
-			case 'greenbi'
+			case 'greenbi':
 				portrait.portraitPath = 'dialogue/greenbiDialogue'
 				portrait.portraitPrefix = 'greenbi'
 		}
