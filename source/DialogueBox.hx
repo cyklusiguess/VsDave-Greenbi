@@ -36,7 +36,7 @@ class DialogueBox extends FlxSpriteGroup
 
 	public var finishThing:Void->Void;
 
-	public var noAa:Array<String> = ["dialogue/dave_furiosity", "dialogue/3d_bamb", "dialogue/unfairnessPortrait"];
+	public var noAa:Array<String> = ["dialogue/dave_furiosity", "dialogue/3d_bamb", "dialogue/unfairnessPortrait", "dialogue/greenbiDialogue"];
 
 	var portraitLeft:FlxSprite;
 	var portraitRight:FlxSprite;
@@ -402,7 +402,7 @@ class DialogueBox extends FlxSpriteGroup
 			}
 			switch (curCharacter)
 			{
-				case 'dave' | 'bambi' | 'tristan' | 'insanityEndDave': //guys its the funny bambi character
+				case 'dave' | 'bambi' | 'tristan' | 'insanityEndDave' | 'greenbi': //guys its the funny bambi character
 						portraitLeft.setPosition(220, 220);
 				case 'bf' | 'gf': //create boyfriend & genderbent boyfriend
 					portraitRight.setPosition(570, 220);
@@ -572,7 +572,7 @@ class DialogueBox extends FlxSpriteGroup
 				portrait.portraitPrefix = 'tristan portrait';
 			case 'greenbi':
 				portrait.portraitPath = 'dialogue/greenbiDialogue';
-				portrait.portraitPrefix = 'greenbi';
+				portrait.portraitPrefix = 'greenbi0';
 		}
 		return portrait;
 	}
