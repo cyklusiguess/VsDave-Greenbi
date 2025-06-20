@@ -91,7 +91,7 @@
 		#end
 
 			#if !mobile
-			addChild(new FPS(10, 3, 0xFFFFFF));
+			addChild(new FPS(10, 3, 0x11FF00));
 			#end
 		}
 	}
