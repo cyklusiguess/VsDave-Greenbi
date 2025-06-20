@@ -47,18 +47,12 @@ class StoryMenuState extends MusicBeatState
 
 	var weekCharacters:Array<Dynamic> = [
 		['empty', 'bf', 'gf'],
-		['empty', 'empty', 'empty'],
-		['empty', 'empty', 'empty'],
-		['empty', 'empty', 'empty'],
 		['empty', 'empty', 'empty']
 	];
 
 	var weekNames:Array<String> = [
 		"Tutorial",
-		"Dave's Fun Rapping Battle!",
-		"Mr. Bambi's Fun Corn Maze!",
-		"The Finale",
-		'?????????'
+		"GREENBI"
 	];
 
 	var txtWeekTitle:FlxText;
@@ -84,9 +78,7 @@ class StoryMenuState extends MusicBeatState
 
 	var songColors:Array<FlxColor> = [
         0xFFca1f6f, // GF
-		0xFF4965FF, // DAVE
-		0xFF00B515, // MISTER BAMBI RETARD
-		0xFF00FFFF //SPLIT THE THONNNNN
+		0xFF00FF2F, // Greenbi.
     ];
 
 	override function create()
@@ -124,7 +116,7 @@ class StoryMenuState extends MusicBeatState
 		scoreText.setFormat("VCR OSD Mono", 32);
 
 		txtWeekTitle = new FlxText(FlxG.width * 0.7, 10, 0, "", 32);
-		txtWeekTitle.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, RIGHT);
+		txtWeekTitle.setFormat("VCR OSD Mono", 32, FlxColor.LIME, RIGHT);
 		txtWeekTitle.alpha = 0.7;
 
 		var rankText:FlxText = new FlxText(0, 10);
@@ -134,7 +126,7 @@ class StoryMenuState extends MusicBeatState
 		rankText.screenCenter(X);
 
 		var ui_tex = Paths.getSparrowAtlas('campaign_menu_UI_assets');
-		yellowBG = new FlxSprite(0, 56).makeGraphic(FlxG.width * 2, 400, FlxColor.WHITE);
+		yellowBG = new FlxSprite(0, 56).makeGraphic(FlxG.width * 2, 400, FlxColor.LIME);
 		yellowBG.color = songColors[0];
 
 		imageBG = new FlxSprite(600, 1000).loadGraphic(Paths.image("blank", "shared"));
@@ -541,13 +533,7 @@ class StoryMenuState extends MusicBeatState
 		switch (curWeek)
 		{
 			case 1:
-				path = Paths.image("dave/DaveHouse", "shared");
-				position = new FlxPoint(600, 55);
-			case 2:
-				path = Paths.image("dave/bamboi", "shared");
-				position = new FlxPoint(600, 55);
-			case 3:
-				path = Paths.image("dave/splitathon", "shared");
+				path = Paths.image("greee", "shared");
 				position = new FlxPoint(600, 55);
 			default:
 				path = Paths.image("blank", "shared");

@@ -41,7 +41,7 @@ class FreeplayState extends MusicBeatState
 
 	private var CurrentSongIcon:FlxSprite;
 
-	private var AllPossibleSongs:Array<String> = ["Dave", "Joke", "Extra", 'Base'];
+	private var AllPossibleSongs:Array<String> = ['Greenbi'];
 
 	private var CurrentPack:Int = 0;
 
@@ -50,10 +50,9 @@ class FreeplayState extends MusicBeatState
 	var loadingPack:Bool = false;
 
 	var songColors:Array<FlxColor> = [
-    	0xFFca1f6f, // GF
-		0xFF4965FF, // DAVE
-		0xFF00B515, // MISTER BAMBI RETARD
-		0xFF00FFFF //SPLIT THE THONNNNN
+    	0xff00ff04, // GF
+		0xFF00FF37, // greemb
+
     ];
 
 	private var iconArray:Array<HealthIcon> = [];
@@ -96,23 +95,7 @@ class FreeplayState extends MusicBeatState
 		switch (AllPossibleSongs[CurrentPack].toLowerCase())
 		{
 			case 'base':
-				addWeek(['Tutorial'], 0, ['gf']);
-			case 'dave':
-				addWeek(['House', 'Insanity', 'Polygonized'], 1, ['dave', 'dave', 'dave-angey']);
-				addWeek(['Bonus-Song'], 1,['dave']);
-				addWeek(['Blocked','Corn-Theft','Maze',], 2, ['bambi']);
-				addWeek(['Splitathon'], 3,['the-duo']);
-			case 'joke':
-				addWeek(['Supernovae', 'Glitch', 'Vs-Dave-Thanksgiving'], 2, ['bambi-stupid']);
-				if (FlxG.save.data.cheatingFound)
-					addWeek(['Cheating'], 2, ['bambi-3d']);
-				if(FlxG.save.data.unfairnessFound)
-					addWeek(['Unfairness'], 2, ['bambi-unfair']);
-			case 'extra':
-				addWeek(['Mealie'], 2, ['bambi-loser']);
-				addWeek(['Furiosity', 'Old-House', 'Old-Insanity'], 1, ['dave-angey', 'dave-old', 'dave-old']);
-				addWeek(['Old-Blocked', 'Old-Corn-Theft', 'Old-Maze', 'Beta-Maze'], 2, ['bambi-farmer-beta', 'bambi-farmer-beta', 'bambi-farmer-beta', 'bambi-farmer-beta']);
-				addWeek(['Old-Splitathon'], 3, ['the-duo']);
+				addWeek(['tynmmmm'], 0, ['bambi']);
 		}
 	}
 
