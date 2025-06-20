@@ -1992,6 +1992,7 @@ class PlayState extends MusicBeatState
 
 	var spawnTime = (SONG.song.toLowerCase() == 'unfairness') ? 15000 : 1500;
 
+	while (unspawnNotes.length > 0 && unspawnNotes[0].strumTime - Conductor.songPosition < spawnTime) {
 	var note:Note = unspawnNotes.shift();
 	note.finishedGenerating = true;
 	notes.add(note);
