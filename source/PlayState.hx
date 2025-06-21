@@ -628,7 +628,7 @@ class PlayState extends MusicBeatState
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
 			'health', 0, 2);
 		healthBar.scrollFactor.set();
-		healthBar.createFilledBar(0xFF00FF3C, 0x31B0D1);
+		healthBar.createFilledBar(0xFF00FF3C, 0xFF31B0D1);
 		add(healthBar);
 
 		var credits:String;
