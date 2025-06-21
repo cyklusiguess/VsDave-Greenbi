@@ -50,8 +50,9 @@ class FreeplayState extends MusicBeatState
 	var loadingPack:Bool = false;
 
 	var songColors:Array<FlxColor> = [
-    	0xff00ff04, // GF
+    	0xff000000, // GF
 		0xFF00FF37, // greemb
+		0xff0000 // trave
 
     ];
 
@@ -94,8 +95,11 @@ class FreeplayState extends MusicBeatState
 	{
 		switch (AllPossibleSongs[CurrentPack].toLowerCase())
 		{
-			case 'base':
-				addWeek(['tynmmmm'], 0, ['bambi']);
+			case 'greenbi':
+				addWeek(['tynmmmm'], 0, ['greenbi']);
+			case 'tave':
+				addWeek(['its-tave-time'], 0, ['tave']);
+
 		}
 	}
 

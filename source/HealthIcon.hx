@@ -19,7 +19,8 @@ class HealthIcon extends FlxSprite
 		'spirit',
 		'bf-pixel',
 		'gf-pixel',
-		'bambi-unfair'
+		'bambi-unfair',
+		'tave'
 	];
 
 	public function new(char:String = 'bf', isPlayer:Bool = false)
@@ -65,7 +66,8 @@ class HealthIcon extends FlxSprite
 		animation.add('what-lmao', [18, 19], 0, false, isPlayer);
 		animation.add('greenbi', [42, 43], 0, false, isPlayer);
 		animation.add('greenbi-mad', [42, 43], 0, false, isPlayer);
-
+		animation.add('greenbi-mad', [42, 43], 0, false, isPlayer);
+		animation.add('tave', [44, 45], 0, false, isPlayer);
 		animation.play(char);
 		if (noAaChars.contains(char))
 		{

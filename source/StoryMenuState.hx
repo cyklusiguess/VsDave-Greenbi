@@ -28,6 +28,8 @@ class StoryMenuState extends MusicBeatState
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
 		['tynmmmm'],
+		['its-tave-time']
+
 	];
 
 	var actualWeeks:Array<Dynamic> = [0, 1, 4, 2, 3];
@@ -44,12 +46,15 @@ class StoryMenuState extends MusicBeatState
 
 	var weekCharacters:Array<Dynamic> = [
 		['empty', 'bf', 'gf'],
+		['empty', 'empty', 'empty'],
 		['empty', 'empty', 'empty']
+
 	];
 
 	var weekNames:Array<String> = [
 		"Tutorial",
-		"GREENBI"
+		"GREENBI",
+		"It's Tave time!"
 	];
 
 	var txtWeekTitle:FlxText;
