@@ -824,6 +824,22 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 		dance();
+	case 'tave':
+				tex = Paths.getSparrowAtlas('tave/tave');
+				frames = tex;
+				animation.addByPrefix('idle', 'idleDance', 24, false);
+				animation.addByPrefix('singUP', 'Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Left', 24, false);
+	
+				addOffset('idle');
+				addOffset("singUP", 18, 12);
+				addOffset("singRIGHT", 5, -2);
+				addOffset("singLEFT", 29, 2);
+				addOffset("singDOWN", -5, 2);
+
+				playAnim('idle');	
 }
 
 		if(isPlayer)
