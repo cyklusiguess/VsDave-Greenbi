@@ -808,6 +808,22 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 		dance();
+				case 'greenbi-mad':
+				frames = Paths.getSparrowAtlas('greenbi/Greenbi_Mad');
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 0, 0);
+				addOffset("singRIGHT", 0, 0);
+				addOffset("singLEFT", 0, 0);
+				addOffset("singDOWN", 0, 0);
+
+				playAnim('idle');
+		dance();
 }
 
 		if(isPlayer)
