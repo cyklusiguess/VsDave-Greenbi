@@ -490,6 +490,11 @@ class PlayState extends MusicBeatState
 			case 'bambi-angey':
 				dad.y += 450;
 				dad.x += 100;
+			case 'tave':
+				{
+					dad.y += 160;
+					dad.x += 250;
+				}	
 		}
 
 
@@ -627,7 +632,14 @@ class PlayState extends MusicBeatState
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
 			'health', 0, 2);
 	healthBar.scrollFactor.set();
+    if (SONG.player2 == "tave") { // will this shit even work bro
+    healthBar.createFilledBar(0xFFFF0000, 0xFF31B0D1);
+		} 
+	else 
+		{
     healthBar.createFilledBar(0xFF00FF3C, 0xFF31B0D1);
+	}
+
 		add(healthBar);
 
 		var credits:String;

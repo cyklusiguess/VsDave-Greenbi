@@ -81,6 +81,7 @@ class StoryMenuState extends MusicBeatState
 	var songColors:Array<FlxColor> = [
         0xFFca1f6f, // GF
 		0xFF00FF2F, // Greenbi.
+		0xFFFF0000 // Tave
     ];
 
 	override function create()
@@ -402,6 +403,9 @@ class StoryMenuState extends MusicBeatState
 					case 1:
 						FlxG.sound.music.stop();
 						LoadingState.loadAndSwitchState(new PlayState(), true);
+					case 2:
+						FlxG.sound.music.stop();
+						LoadingState.loadAndSwitchState(new PlayState(), true);	
 				}
 				
 			});
@@ -537,6 +541,9 @@ class StoryMenuState extends MusicBeatState
 			case 1:
 				path = Paths.image("greee", "shared");
 				position = new FlxPoint(600, 55);
+			case 2:
+				path = Paths.image("tavvvv", "shared");
+				position = new FlxPoint(600, 55);	
 			default:
 				path = Paths.image("blank", "shared");
 				position = new FlxPoint(600, 200);
