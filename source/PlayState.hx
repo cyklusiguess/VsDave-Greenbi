@@ -477,7 +477,7 @@ class PlayState extends MusicBeatState
 				{
 					dad.y += 400;
 				}
-			case 'bambi-new' | 'bambi-farmer-beta':
+			case 'bambi-new' | 'bambi-farmer-beta' | 'greenbi':
 				{
 					dad.y += 450;
 					dad.x += 200;
@@ -1592,11 +1592,11 @@ class PlayState extends MusicBeatState
 		//welcome to 3d sinning avenue
 		if(funnyFloatyBoys.contains(dad.curCharacter.toLowerCase()) && canFloat)
 		{
-			dad.y += (Math.sin(elapsedtime) * 0.6);
+			// dad.y += (Math.sin(elapsedtime) * 0.6);
 		}
 		if(funnyFloatyBoys.contains(boyfriend.curCharacter.toLowerCase()) && canFloat)
 		{
-			boyfriend.y += (Math.sin(elapsedtime) * 0.6);
+			// boyfriend.y += (Math.sin(elapsedtime) * 0.6);
 		}
 		/*if(funnyFloatyBoys.contains(dadmirror.curCharacter.toLowerCase()))
 		{
@@ -1604,7 +1604,7 @@ class PlayState extends MusicBeatState
 		}*/
 		if(funnyFloatyBoys.contains(gf.curCharacter.toLowerCase()) && canFloat)
 		{
-			gf.y += (Math.sin(elapsedtime) * 0.6);
+			// gf.y += (Math.sin(elapsedtime) * 0.6);
 		}
 
 		if (SONG.song.toLowerCase() == 'cheating' && !inCutscene) // fuck you
