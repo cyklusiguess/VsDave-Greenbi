@@ -27,7 +27,7 @@ class ExtrasMenuState extends MusicBeatState
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
-	var optionShit:Array<String> = ['ost', 'credits', 'merch', 'discord'];
+	var optionShit:Array<String> = ['ost', 'credits', 'discord'];
 
 	var newGaming:FlxText;
 	var newGaming2:FlxText;
@@ -37,11 +37,11 @@ class ExtrasMenuState extends MusicBeatState
 
 	public static var finishedFunnyMove:Bool = false;
 
-	public static var daRealEngineVer:String = 'Dave';
+	public static var daRealEngineVer:String = 'Greenbi';
 
-	public static var engineVers:Array<String> = ['Dave', 'Bambi', 'Tristan'];
+	public static var engineVers:Array<String> = ['Greenbi'];
 
-	public static var kadeEngineVer:String = "DAVE";
+	public static var kadeEngineVer:String = "Greenbi";
 	public static var gameVer:String = "0.2.7.1";
 
 	var magenta:FlxSprite;
@@ -184,14 +184,12 @@ class ExtrasMenuState extends MusicBeatState
 
 			if (controls.ACCEPT)
 			{
-        		if (optionShit[curSelected] == 'discord' || optionShit[curSelected] == 'merch')
+        		if (optionShit[curSelected] == 'discord')
 				{
                     switch(optionShit[curSelected])
                     {
                         case 'discord':
-                            fancyOpenURL("https://www.discord.gg/vsdave");
-                        case 'merch':
-                            fancyOpenURL("https://my-store-c1bc70.creator-spring.com/");
+                            fancyOpenURL("https://discord.gg/rnCFhD9GnR");
                     }
 				}
                 else

@@ -205,7 +205,7 @@ class CreditsMenuState extends MusicBeatState
       selectedFormat = new FlxText().setFormat("Comic Sans MS Bold", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
       
       bg.loadGraphic(MainMenuState.randomizeBG());
-		bg.color = 0xFFFF0000;
+		bg.color = 0xFF026B06;
       bg.scrollFactor.set();
 		add(bg);
       

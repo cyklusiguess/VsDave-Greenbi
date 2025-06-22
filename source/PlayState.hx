@@ -199,15 +199,22 @@ class PlayState extends MusicBeatState
 
 	public var thing:FlxSprite = new FlxSprite(0, 250);
 	public var splitathonExpressionAdded:Bool = false;
-
-	public var crazyBatch:String = "shutdown /r /t 0";
+	/*
+	https://gamebanana.com/tuts/14591
+	*/
+	var camX:Int = 0;
+    var camY:Int = 0;
+    var cameramove:Bool = FlxG.save.data.cammove;
+    var tailscircle:String = '';
 
 	public var backgroundSprites:FlxTypedGroup<FlxSprite> = new FlxTypedGroup<FlxSprite>();
 	var normalDaveBG:FlxTypedGroup<FlxSprite> = new FlxTypedGroup<FlxSprite>();
 	var canFloat:Bool = true;
 
 	var nightColor:FlxColor = 0xFF878787;
-
+	var spinCam:Bool = false;
+	var resetCam:Bool = false;
+	var username:String = Sys.getEnv("USERNAME");
 	override public function create()
 	{
 		theFunne = FlxG.save.data.newInput;
@@ -481,6 +488,7 @@ class PlayState extends MusicBeatState
 				{
 					dad.y += 450;
 					dad.x += 200;
+					
 				}
 			case 'bambi-splitathon':
 				{
@@ -659,6 +667,8 @@ class PlayState extends MusicBeatState
 				credits = 'What the hell!';
 			case 'tynmmmm':
 				credits = 'GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI GREENBI ';
+			case 'its-tave-time':
+			credits = "It's Tave time, " + username + "!";
 			default:
 				credits = '';
 		}
@@ -764,6 +774,23 @@ class PlayState extends MusicBeatState
 		var sprites:FlxTypedGroup<FlxSprite> = new FlxTypedGroup<FlxSprite>();
 		switch (bgName)
 		{
+
+			case 'tave-field':
+    		defaultCamZoom = 0.8;
+			var bgsky:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('tave/sky'));
+    		var bg:FlxSprite = new FlxSprite(200, 700).loadGraphic(Paths.image('tave/grass'));
+    		bg.setGraphicSize(Std.int(bg.width * 2));
+			add(bgsky);
+    		add(bg);
+			var testshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
+			testshader.waveAmplitude = 0.008;
+			testshader.waveFrequency = 80;
+			testshader.waveSpeed = 1.5;
+			bgsky.shader = testshader.shader;
+			curbg = bgsky;
+
+
+			
 			case 'house':
 				defaultCamZoom = 0.9;
 				curStage = 'daveHouse';
@@ -1588,17 +1615,41 @@ class PlayState extends MusicBeatState
 		return num;
 	}
 
-	override public function update(elapsed:Float)
-	{
-		elapsedtime += elapsed;
-		if (curbg != null)
-		{
-			if (curbg.active) // only the furiosity background is active
-			{
-				var shad = cast(curbg.shader, Shaders.GlitchShader);
-				shad.uTime.value[0] += elapsed;
-			}
-		}
+override public function update(elapsed:Float)
+{
+	FlxG.timeScale = 1;
+	super.update(elapsed);
+
+if (spinCam)
+{
+    FlxG.camera.angle += 60 * elapsed;
+}
+else if (resetCam)
+{
+    if (Math.abs(FlxG.camera.angle) <= 1)
+    {
+        FlxG.camera.angle = 0;
+        resetCam = false;
+    }
+    else
+    {
+        FlxG.camera.angle *= 0.25;
+    }
+}
+
+
+
+    elapsedtime += elapsed;
+
+    if (curbg != null)
+    {
+        if (curbg.active) // only the furiosity background is active
+        {
+            var shad = cast(curbg.shader, Shaders.GlitchShader);
+            shad.uTime.value[0] += elapsed;
+        }
+	}
+
 
 		//welcome to 3d sinning avenue
 		if(funnyFloatyBoys.contains(dad.curCharacter.toLowerCase()) && canFloat)
@@ -1631,6 +1682,7 @@ class PlayState extends MusicBeatState
 				spr.x += Math.sin(elapsedtime) * 1.5;
 			});
 		}
+
 
 		if (SONG.song.toLowerCase() == 'unfairness' && !inCutscene) // fuck you
 			{
@@ -1782,11 +1834,10 @@ class PlayState extends MusicBeatState
 			persistentDraw = true;
 			paused = true;
 
-			// 1 / 1000 chance for Gitaroo Man easter egg
-			if (FlxG.random.bool(0.1))
+			if (FlxG.random.bool(1))
 			{
 				// gitaroo man easter egg
-				FlxG.switchState(new GitarooPause());
+				FlxG.switchState(new YouCheatedSomeoneIsComing());
 			}
 			else
 				openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
@@ -1824,6 +1875,10 @@ class PlayState extends MusicBeatState
 					#end
 			}
 		}
+		if (FlxG.keys.justPressed.NINE)
+			{
+				FlxG.switchState(new YouCheatedSomeoneIsComing());
+			}	
 
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
 		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
@@ -2640,6 +2695,7 @@ while (unspawnNotes.length > 0 && unspawnNotes[0].strumTime - Conductor.songPosi
 
 			var pixelShitPart1:String = "";
 			var pixelShitPart2:String = '';
+			
 
 			if (curStage.startsWith('school'))
 			{
@@ -3197,7 +3253,23 @@ while (unspawnNotes.length > 0 && unspawnNotes[0].strumTime - Conductor.songPosi
 					case 512 | 688 | 1420 | 1464 | 1540 | 1558 | 1608 | 1745:
 						shakeCam = false;
 						camZooming = false;
-				}
+				}		
+case 'its-tave-time':
+    switch (curStep)
+    {
+        case 1023:
+            spinCam = true;
+            resetCam = false;
+		FlxG.camera.flash(FlxColor.WHITE, 1);
+        case 1279:
+            spinCam = false;
+            resetCam = true;
+		FlxG.camera.flash(FlxColor.WHITE, 1);
+
+    }
+
+
+
 		}
 		#if desktop
 		DiscordClient.changePresence(detailsText
