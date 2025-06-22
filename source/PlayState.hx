@@ -673,11 +673,11 @@ class PlayState extends MusicBeatState
 				credits = '';
 		}
 		var randomThingy:Int = FlxG.random.int(0, 2);
-		var engineName:String = 'GREENBI ';
+		var engineName:String = 'Greenbi';
 		switch(randomThingy)
 	    {
 			case 0:
-				engineName = 'greenbi ';
+				engineName = 'Greenbi';
 		}
 		var creditsText:Bool = credits != '';
 		var textYPos:Float = healthBarBG.y + 50;
