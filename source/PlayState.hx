@@ -1875,7 +1875,7 @@ else if (resetCam)
 					#end
 			}
 		}
-		if (FlxG.keys.justPressed.NINE)
+		if (FlxG.keys.justPressed.SIX)
 			{
 				FlxG.switchState(new YouCheatedSomeoneIsComing());
 			}	
