@@ -74,6 +74,7 @@
 		NOT USING A DIRECT THING TO THE ASSET!!!
 	-->
 	<assets path="assets/fonts" embed='true'/>
+	<assets path="assets/fonts" include="*.ttf" /> <!--just in case because i'm stupid-->
 	<!-- _______________________________ Libraries ______________________________ -->
 
 	<haxelib name="flixel" />

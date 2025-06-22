@@ -789,6 +789,17 @@ class PlayState extends MusicBeatState
 			bgsky.shader = testshader.shader;
 			curbg = bgsky;
 
+			case 'greenbi-world':
+    		defaultCamZoom = 0.8;
+    		var bg:FlxSprite = new FlxSprite(-500, -720).loadGraphic(Paths.image('greenbi/greenbi1'));
+			bg.scrollFactor.set(0, 0);
+    		add(bg);
+			var testshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
+				testshader.waveAmplitude = 0.1;
+				testshader.waveFrequency = 5;
+				testshader.waveSpeed = 2;
+			bg.shader = testshader.shader;
+			curbg = bg;	
 
 			
 			case 'house':
@@ -2215,7 +2226,6 @@ while (unspawnNotes.length > 0 && unspawnNotes[0].strumTime - Conductor.songPosi
 						if(daNote.mustPress && daNote.finishedGenerating)
 							noteMiss(daNote.noteData);
 							health -= 0.002;
-							trace("miss note");
 							vocals.volume = 0;
 					}
 
@@ -3001,7 +3011,6 @@ while (unspawnNotes.length > 0 && unspawnNotes[0].strumTime - Conductor.songPosi
 		if (!boyfriend.stunned)
 		{
 			health -= 0.002;
-			trace("note miss");
 			if (combo > 5 && gf.animOffsets.exists('sad'))
 			{
 				gf.playAnim('sad');

@@ -1038,7 +1038,6 @@ class ChartingState extends MusicBeatState
 
 	function deleteNote(note:Note):Void
 		{
-			trace(_song.notes[curSection].sectionNotes);
 			for (n in 0..._song.notes[curSection].sectionNotes.length)
 			{
 				var i = _song.notes[curSection].sectionNotes[n];

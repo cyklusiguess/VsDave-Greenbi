@@ -96,7 +96,7 @@ class FreeplayState extends MusicBeatState
 		switch (AllPossibleSongs[CurrentPack].toLowerCase())
 		{
 			case 'greenbi':
-				addWeek(['tynmmmm'], 0, ['greenbi']);
+				addWeek(['tynmmmm', 'aofodf89ccccc'], 0, ['greenbi']);
 			case 'tave':
 				addWeek(['its-tave-time'], 0, ['tave']);
 
