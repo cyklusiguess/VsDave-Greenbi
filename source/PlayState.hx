@@ -799,6 +799,30 @@ class PlayState extends MusicBeatState
 				testshader.waveFrequency = 5;
 				testshader.waveSpeed = 2;
 			bg.shader = testshader.shader;
+			curbg = bg;
+
+			case 'greenbi-world2':
+    		defaultCamZoom = 0.8;
+    		var bg:FlxSprite = new FlxSprite(-500, -720).loadGraphic(Paths.image('greenbi/greenbi2'));
+			bg.scrollFactor.set(0, 0);
+    		add(bg);
+			var testshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
+				testshader.waveAmplitude = 0.1;
+				testshader.waveFrequency = 5;
+				testshader.waveSpeed = 2;
+			bg.shader = testshader.shader;
+			curbg = bg;
+
+			case 'greenbi-world3':
+    		defaultCamZoom = 0.8;
+    		var bg:FlxSprite = new FlxSprite(-500, -720).loadGraphic(Paths.image('greenbi/greenbi3'));
+			bg.scrollFactor.set(0, 0);
+    		add(bg);
+			var testshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
+				testshader.waveAmplitude = 0.1;
+				testshader.waveFrequency = 5;
+				testshader.waveSpeed = 2;
+			bg.shader = testshader.shader;
 			curbg = bg;	
 
 			
@@ -3131,9 +3155,9 @@ while (unspawnNotes.length > 0 && unspawnNotes[0].strumTime - Conductor.songPosi
 				totalNotesHit += 1;
 
 			if (note.isSustainNote)
-				health += 0.004;
+				health += 1;
 			else
-				health += 0.023;
+				health += 1;
 
 			if (darkLevels.contains(curStage) && SONG.song.toLowerCase() != "polygonized")
 			{
