@@ -795,11 +795,12 @@ class PlayState extends MusicBeatState
 			bg.scrollFactor.set(0, 0);
     		add(bg);
 			var testshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
-				testshader.waveAmplitude = 0.1;
-				testshader.waveFrequency = 5;
-				testshader.waveSpeed = 2;
+			testshader.waveAmplitude = 0.02; // "i would turn down the wavyness" yeah sure
+			testshader.waveFrequency = 15;     
+			testshader.waveSpeed = 1.5;      
 			bg.shader = testshader.shader;
-			curbg = bg;
+			curbg = bg;							
+
 
 			case 'greenbi-world2':
     		defaultCamZoom = 0.8;
@@ -3155,9 +3156,9 @@ while (unspawnNotes.length > 0 && unspawnNotes[0].strumTime - Conductor.songPosi
 				totalNotesHit += 1;
 
 			if (note.isSustainNote)
-				health += 1;
+				health += 0.2;
 			else
-				health += 1;
+				health += 0.2;
 
 			if (darkLevels.contains(curStage) && SONG.song.toLowerCase() != "polygonized")
 			{
