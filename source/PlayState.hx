@@ -43,6 +43,7 @@ import openfl.display.BlendMode;
 import openfl.display.StageQuality;
 import openfl.filters.ShaderFilter;
 import flash.system.System;
+import lime.app.Application;
 #if desktop
 import Discord.DiscordClient;
 #end
